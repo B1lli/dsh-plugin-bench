@@ -1,0 +1,87 @@
+{
+  "evaluatedAt": "2026-08-20T17:38:26.245Z",
+  "targets": [
+  {
+    "target": "deepseek-ai/deepseek-harness",
+    "commit": "141eb6fef83422698aef7a981029e843e8161534",
+    "artifact": "packages/plan/plan-mode",
+    "label": "official-plan-mode",
+    "cohort": "official-built-in",
+    "identity": "OFFICIAL_BUILT_IN"
+  },
+  {
+    "target": "ccch1mneyyy/dsh-TUI",
+    "commit": "0dcc4bb99ddddffeefd70c875c1520339c696f59",
+    "label": "dsh-tui",
+    "cohort": "popular-self-claimed-official-feature",
+    "identity": "SELF_CLAIMED"
+  },
+  {
+    "target": "vlln/plugin-registry",
+    "commit": "303b728b9fa780cdba45d2c7ac6df580eb84c540",
+    "artifact": "packages/plugin/console",
+    "label": "plugin-registry",
+    "cohort": "beta-source-candidate",
+    "identity": "UNPROVEN"
+  },
+  {
+    "target": "omdsh-dev/dsh-at-file",
+    "commit": "c57849b27e378cf6b41d082b17c8a8750cee370f",
+    "label": "dsh-at-file",
+    "cohort": "community-medium",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "xiaobright/dsh-anchored-standard",
+    "commit": "25f21aefaf8ddc414da54d2e581e43740d977c6e",
+    "artifact": "zero-anchored-standard",
+    "label": "anchored-standard",
+    "cohort": "community-popular",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "2BingLing/dsh-market",
+    "commit": "f840fd4010904cb8cea2ff4000b10c74e84dd96c",
+    "artifact": "plugin/ui",
+    "label": "dsh-market",
+    "cohort": "existing-score-project",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "PerryLink/dsh-score",
+    "commit": "f2f173f520eea0aaeb35e93dc2e5298433a4bf26",
+    "label": "dsh-score",
+    "cohort": "cold-existing-score-project",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "Mingxi2077/dsh-plugin-review",
+    "commit": "e3176cd157e93d5bea9d930275afa16e4c8867af",
+    "label": "dsh-plugin-review",
+    "cohort": "community-cold",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "titanwings/colleague-skill",
+    "commit": "5a799b83b5d11aa0dbdc09df70fed46265d71f0b",
+    "label": "colleague-skill",
+    "cohort": "popular-skill",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "amruthpillai/reactive-resume",
+    "commit": "3221afda9ddfb03d6cce87927b0ce47338b4cfa8",
+    "artifact": "packages/dsh-plugin",
+    "label": "reactive-resume",
+    "cohort": "popular-mother-repo-attribution-control",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  },
+  {
+    "target": "imsai-sh/zhuzhiliao",
+    "commit": "199e203b038ffb515f3a21189a29da4b4fb8518f",
+    "label": "zhuzhiliao",
+    "cohort": "popular-topic-contamination-control",
+    "identity": "COMMUNITY_DISCOVERABLE"
+  }
+  ]
+}

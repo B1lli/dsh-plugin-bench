@@ -1,0 +1,4952 @@
+{
+  "schema": "dsh-plugin-bench/batch-v1",
+  "generatedAt": "2026-08-22T23:52:43.461Z",
+  "evaluatedAt": "2026-08-20T17:38:26.245Z",
+  "reports": [
+    {
+      "sample": {
+        "target": "deepseek-ai/deepseek-harness",
+        "commit": "141eb6fef83422698aef7a981029e843e8161534",
+        "artifact": "packages/plan/plan-mode",
+        "label": "official-plan-mode",
+        "cohort": "official-built-in",
+        "identity": "OFFICIAL_BUILT_IN"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "deepseek-ai/deepseek-harness",
+        "commit": "141eb6fef83422698aef7a981029e843e8161534",
+        "commitAt": "2026-08-19T15:00:28Z",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "commit": "141eb6f",
+          "node": "22.22.0",
+          "os": "macOS",
+          "isolatedDshHome": false
+        },
+        "classification": {
+          "artifact": "packages/plan/plan-mode",
+          "types": [
+            "native-plugin"
+          ],
+          "eligible": true
+        },
+        "identity": "OFFICIAL_BUILT_IN",
+        "quality": {
+          "confirmed": 41.8,
+          "upper": 89,
+          "coverage": 52.7,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 7,
+            "possible": 20,
+            "unproven": 11
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 3,
+            "possible": 9,
+            "unproven": 6
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 6.5,
+            "possible": 10,
+            "unproven": 2
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 2.5,
+            "possible": 12,
+            "unproven": 7
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 8,
+            "possible": 12,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 4,
+            "possible": 10,
+            "unproven": 5
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 7,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 185006,
+          "forks": 20454
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "官方 plan-mode 聚焦测试 4 个文件、83 个测试全部通过",
+            "evidence": [
+              "corepack pnpm exec vitest run packages/plan/plan-mode/tests"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "该类型不使用 bundle patch",
+            "evidence": []
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 10 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/dsh-agent@workspace:^",
+              "@deepseek-ai/dsh-commands@workspace:^",
+              "@deepseek-ai/dsh-invariants@workspace:^",
+              "@deepseek-ai/dsh-llm@workspace:^",
+              "@deepseek-ai/dsh-session@workspace:^",
+              "@deepseek-ai/dsh-session-projection@workspace:^",
+              "@deepseek-ai/dsh-system-prompt@workspace:^",
+              "@deepseek-ai/dsh-tools@workspace:^",
+              "@deepseek-ai/dsh-user-questions@workspace:^",
+              "@deepseek-ai/cordis@workspace:^"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "未确认可发布物的兼容版本范围",
+            "evidence": []
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "官方 plan-mode 聚焦测试 4 个文件、83 个测试全部通过",
+            "evidence": [
+              "corepack pnpm exec vitest run packages/plan/plan-mode/tests"
+            ]
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 1 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "ccch1mneyyy/dsh-TUI",
+        "commit": "0dcc4bb99ddddffeefd70c875c1520339c696f59",
+        "label": "dsh-tui",
+        "cohort": "popular-self-claimed-official-feature",
+        "identity": "SELF_CLAIMED"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "ccch1mneyyy/dsh-TUI",
+        "commit": "0dcc4bb99ddddffeefd70c875c1520339c696f59",
+        "commitAt": "2026-08-20T15:15:34+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "node": "22.22.0",
+          "os": "macOS",
+          "profile": "dsh-tui",
+          "isolatedDshHome": true
+        },
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "SELF_CLAIMED",
+        "quality": {
+          "confirmed": 58.5,
+          "upper": 84.5,
+          "coverage": 74,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 12,
+            "possible": 20,
+            "unproven": 3
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 9,
+            "possible": 12,
+            "unproven": 3
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 10.5,
+            "possible": 13,
+            "unproven": 0
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 0,
+            "possible": 12,
+            "unproven": 12
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 13,
+            "possible": 15,
+            "unproven": 0
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 8,
+            "possible": 10,
+            "unproven": 0
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 6,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 2315,
+          "forks": 107
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现自动化测试",
+            "evidence": []
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "真实 TTY 启动并渲染可交互 dsh-TUI 0.8.6 主界面",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "npm 包 0.8.6 从空 DSH_HOME 安装并解析完整 patch",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 24 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-agent@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-agent-instructions@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-agent-presets@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-atomic-write@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-commands@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-cordis-host-runner@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-invariants@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-llm@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-persona@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-session@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-skill@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage-domain@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage-json@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-system-prompt@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-terminal@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-terminal-bash@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-ask-user@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-bash-persistent@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-cordis@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-user-approval@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-user-questions@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-workspace@^0.1.0-rc.7"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-agent@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-agent-instructions@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-agent-presets@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-atomic-write@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-commands@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-cordis-host-runner@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-invariants@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-llm@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-persona@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-session@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-skill@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage-domain@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-storage-json@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-system-prompt@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-terminal@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-terminal-bash@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-ask-user@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-bash-persistent@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-tool-cordis@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-user-approval@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-user-questions@^0.1.0-rc.7",
+              "@deepseek-ai/dsh-workspace@^0.1.0-rc.7"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现长期资源与清理形状；未证明两者生命周期关联",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E3",
+            "summary": "可在 rc.8 启动，但运行时告警称该发布物仅验证到 rc.7，与源码验证说明存在漂移",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "安装期脚本：prepare",
+            "evidence": [
+              "prepare: npm run compile"
+            ]
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E4",
+            "summary": "使用隔离 DSH_HOME，未观察到工作区写入；未做系统调用级审计",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "主界面、模型状态、输入区和兼容性告警均可见",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E4",
+            "summary": "验证单一桌面 TTY；未覆盖不同终端尺寸和配色",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-tui-086"
+            ]
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "tests=false, ci=true, scripts=none",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "artifact lockfile=true, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 0 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "vlln/plugin-registry",
+        "commit": "303b728b9fa780cdba45d2c7ac6df580eb84c540",
+        "artifact": "packages/plugin/console",
+        "label": "plugin-registry",
+        "cohort": "beta-source-candidate",
+        "identity": "UNPROVEN"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "vlln/plugin-registry",
+        "commit": "303b728b9fa780cdba45d2c7ac6df580eb84c540",
+        "commitAt": "2026-08-18T13:27:41Z",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "node": "22.22.0",
+          "os": "macOS",
+          "profile": "web",
+          "isolatedDshHome": true
+        },
+        "classification": {
+          "artifact": "packages/plugin/console",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "UNPROVEN",
+        "quality": {
+          "confirmed": 59.8,
+          "upper": 85.6,
+          "coverage": 74.2,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 14.5,
+            "possible": 20,
+            "unproven": 3
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 9,
+            "possible": 12,
+            "unproven": 3
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 10,
+            "possible": 10,
+            "unproven": 0
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 1.5,
+            "possible": 12,
+            "unproven": 9
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 11.5,
+            "possible": 15,
+            "unproven": 0
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 5.5,
+            "possible": 10,
+            "unproven": 2
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 6,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 56,
+          "forks": 6
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现 8 个测试文件；未提交 E2 执行结果",
+            "evidence": [
+              "tests/source.spec.ts",
+              "tests/tsconfig.json",
+              "tests/versions.spec.ts",
+              "tests/discovery/enumerate.spec.ts",
+              "tests/discovery/store.spec.ts"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "运行时注册四个插件工具，/api/plugin-console/installed 返回 200 与实际安装列表",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"
+            ]
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "@vlln/plugin-console@0.1.0 从空 DSH_HOME 安装、解析并启动 Web profile",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"
+            ]
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 1 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/dsh-tools@^0.1.0-rc.5"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/dsh-tools@^0.1.0-rc.5"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "与官方 Web baseline 共存并完成插件工具和 HTTP 路由注册",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"
+            ]
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E4",
+            "summary": "使用隔离 DSH_HOME 且状态端点只读；安装/卸载工具的写入边界未做系统调用级审计",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"
+            ]
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E4",
+            "summary": "API 状态结果可见；浏览器面板交互未完成",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"
+            ]
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "tests=true, ci=false, scripts=test",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "artifact lockfile=true, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 2 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "omdsh-dev/dsh-at-file",
+        "commit": "c57849b27e378cf6b41d082b17c8a8750cee370f",
+        "label": "dsh-at-file",
+        "cohort": "community-medium",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "omdsh-dev/dsh-at-file",
+        "commit": "c57849b27e378cf6b41d082b17c8a8750cee370f",
+        "commitAt": "2026-08-20T23:34:20+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "node": "22.22.0",
+          "os": "macOS",
+          "profile": "web",
+          "isolatedDshHome": true
+        },
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 53.1,
+          "upper": 92.3,
+          "coverage": 60.8,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 9,
+            "possible": 20,
+            "unproven": 11
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 9,
+            "possible": 12,
+            "unproven": 3
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 10,
+            "possible": 10,
+            "unproven": 0
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 2.5,
+            "possible": 12,
+            "unproven": 7
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 11,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 4,
+            "possible": 10,
+            "unproven": 5
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 6,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 454,
+          "forks": 18
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "按项目支持的 sibling 源码布局执行 164 个测试，全部通过",
+            "evidence": [
+              "supported sibling layout pnpm run check: 164 tests passed"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "README 固定 tarball v0.6.7 从空 DSH_HOME 安装并启动 Web profile",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-at-file-v067"
+            ]
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 14 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1-rc.1",
+              "@deepseek-ai/dsh-agent@*",
+              "@deepseek-ai/dsh-typert-protocol@*",
+              "@deepseek-ai/dsh-client-runtime@*",
+              "@deepseek-ai/dsh-api-remotes@*",
+              "@deepseek-ai/dsh-client-ui-input-trigger@*",
+              "@deepseek-ai/dsh-client-ui-slots@*",
+              "@deepseek-ai/dsh-client-ui-conversation@*",
+              "@deepseek-ai/dsh-client-locale@*",
+              "@deepseek-ai/dsh-client-connection@*",
+              "@deepseek-ai/dsh-typert-registry@*",
+              "@deepseek-ai/dsh-settings@*",
+              "@deepseek-ai/dsh-client-ui-settings@*",
+              "@deepseek-ai/dsh-llm@*"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1-rc.1",
+              "@deepseek-ai/dsh-agent@*",
+              "@deepseek-ai/dsh-typert-protocol@*",
+              "@deepseek-ai/dsh-client-runtime@*",
+              "@deepseek-ai/dsh-api-remotes@*",
+              "@deepseek-ai/dsh-client-ui-input-trigger@*",
+              "@deepseek-ai/dsh-client-ui-slots@*",
+              "@deepseek-ai/dsh-client-ui-conversation@*",
+              "@deepseek-ai/dsh-client-locale@*",
+              "@deepseek-ai/dsh-client-connection@*",
+              "@deepseek-ai/dsh-typert-registry@*",
+              "@deepseek-ai/dsh-settings@*",
+              "@deepseek-ai/dsh-client-ui-settings@*",
+              "@deepseek-ai/dsh-llm@*"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "配置解析并与官方 Web baseline 共存启动",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-at-file-v067"
+            ]
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E2",
+            "summary": "按支持的 sibling 源码布局完成 typecheck、164 个测试与 build；冻结安装因 workspace 配置与 lockfile 不一致失败",
+            "evidence": [
+              "pnpm install --frozen-lockfile: config mismatch",
+              "supported sibling layout pnpm run check: 164 tests plus typecheck/build passed"
+            ]
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "artifact lockfile=true, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 0 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "xiaobright/dsh-anchored-standard",
+        "commit": "25f21aefaf8ddc414da54d2e581e43740d977c6e",
+        "artifact": "zero-anchored-standard",
+        "label": "anchored-standard",
+        "cohort": "community-popular",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "xiaobright/dsh-anchored-standard",
+        "commit": "25f21aefaf8ddc414da54d2e581e43740d977c6e",
+        "commitAt": "2026-08-17T02:11:11Z",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "node": "22.22.0",
+          "os": "macOS",
+          "isolatedDshHome": false
+        },
+        "classification": {
+          "artifact": "zero-anchored-standard",
+          "types": [
+            "preset"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 26.2,
+          "upper": 83.5,
+          "coverage": 42.7,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 5,
+            "possible": 20,
+            "unproven": 15
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 0,
+            "possible": 9,
+            "unproven": 6
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 3,
+            "possible": 5,
+            "unproven": 2
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 0,
+            "possible": 9,
+            "unproven": 9
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 7.5,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 0,
+            "possible": 6,
+            "unproven": 3
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 6,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 3714,
+          "forks": 111
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": []
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "npm 安装后执行项目测试，205 个测试全部通过",
+            "evidence": [
+              "npm install --ignore-scripts && npm test: 205 passed"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现与 artifact 类型匹配的安装/启用说明",
+            "evidence": []
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "该类型不使用 bundle patch",
+            "evidence": []
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未从包依赖确认官方扩展接口",
+            "evidence": []
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未确认可发布物的兼容版本范围",
+            "evidence": []
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现许可证",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "非 UI 插件",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "npm 安装完成，205 个项目测试全部通过",
+            "evidence": [
+              "npm install --ignore-scripts && npm test: 205 passed"
+            ]
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "security policy=false, license=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 3 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "2BingLing/dsh-market",
+        "commit": "f840fd4010904cb8cea2ff4000b10c74e84dd96c",
+        "artifact": "plugin/ui",
+        "label": "dsh-market",
+        "cohort": "existing-score-project",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "2BingLing/dsh-market",
+        "commit": "f840fd4010904cb8cea2ff4000b10c74e84dd96c",
+        "commitAt": "2026-08-16T05:29:19Z",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "node": "22.22.0",
+          "os": "macOS",
+          "profile": "web",
+          "isolatedDshHome": true
+        },
+        "classification": {
+          "artifact": "plugin/ui",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 30,
+          "upper": 77,
+          "coverage": 53,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 0,
+            "possible": 20,
+            "unproven": 15
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 6,
+            "possible": 12,
+            "unproven": 3
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 8.5,
+            "possible": 13,
+            "unproven": 0
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 0,
+            "possible": 12,
+            "unproven": 12
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 9.5,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 1,
+            "possible": 10,
+            "unproven": 5
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 5,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 55,
+          "forks": 1
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": []
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现自动化测试",
+            "evidence": []
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现与 artifact 类型匹配的安装/启用说明",
+            "evidence": []
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "@dsh-market/plugin 从空 DSH_HOME 安装、解析并启动 Web profile",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-market-021"
+            ]
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "未从包依赖确认官方扩展接口",
+            "evidence": []
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "未确认可发布物的兼容版本范围",
+            "evidence": []
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现长期资源与清理形状；未证明两者生命周期关联",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "与官方 Web baseline 共存启动",
+            "evidence": [
+              "evidence/raw/plugin-runtime-pilot.md#dsh-market-021"
+            ]
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "tests=false, ci=false, scripts=test,typecheck",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 4 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "PerryLink/dsh-score",
+        "commit": "f2f173f520eea0aaeb35e93dc2e5298433a4bf26",
+        "label": "dsh-score",
+        "cohort": "cold-existing-score-project",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "PerryLink/dsh-score",
+        "commit": "f2f173f520eea0aaeb35e93dc2e5298433a4bf26",
+        "commitAt": "2026-08-18T23:02:40+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": {
+          "dsh": "0.1.0-rc.8",
+          "node": "22.22.0",
+          "os": "macOS",
+          "profile": "headless/web",
+          "isolatedDshHome": true
+        },
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 73.2,
+          "upper": 90.7,
+          "coverage": 82.5,
+          "formal": true,
+          "grade": "可用，有明确取舍",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 18,
+            "possible": 20,
+            "unproven": 0
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 10.5,
+            "possible": 12,
+            "unproven": 0
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 10,
+            "possible": 10,
+            "unproven": 0
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 2.5,
+            "possible": 12,
+            "unproven": 7
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 13,
+            "possible": 15,
+            "unproven": 0
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 7,
+            "possible": 10,
+            "unproven": 2
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 10,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 0,
+          "forks": 0
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "13 个文件中的 91 个自动化测试全部通过",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#engineering-verification"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "DeepSeek agent 实际调用 score 工具并得到结构化评分结果",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#core-path"
+            ]
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "空 target 返回明确可行动错误，Harness 会话保持可用",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#negative-path"
+            ]
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "从空 DSH_HOME 安装到 headless/web profile，配置解析和 Web 启动均成功",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#clean-profile"
+            ]
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E3",
+            "summary": "重启激活成功；官方 CLI remove 删除依赖后未同步清理 profile bundle 行，归因为平台级卸载缺陷",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#restart-remove"
+            ]
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 7 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-agent@0.1.0-rc.6",
+              "@deepseek-ai/dsh-commands@0.1.0-rc.6",
+              "@deepseek-ai/dsh-jobs@0.1.0-rc.6",
+              "@deepseek-ai/dsh-storage-domain@0.1.0-rc.6",
+              "@deepseek-ai/dsh-subprocess@0.1.0-rc.6",
+              "@deepseek-ai/dsh-tools@0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-agent@0.1.0-rc.6",
+              "@deepseek-ai/dsh-commands@0.1.0-rc.6",
+              "@deepseek-ai/dsh-jobs@0.1.0-rc.6",
+              "@deepseek-ai/dsh-storage-domain@0.1.0-rc.6",
+              "@deepseek-ai/dsh-subprocess@0.1.0-rc.6",
+              "@deepseek-ai/dsh-tools@0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E3",
+            "summary": "与官方 baseline profile 共存并可在 Web/Headless 两种 profile 启动",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#clean-profile"
+            ]
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E4",
+            "summary": "两个独立会话运行了不同路径，不能证明同一路径重复运行稳定",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#repeat-run-and-visible-result"
+            ]
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "安装期脚本：prepare",
+            "evidence": [
+              "prepare: node scripts/prepare.mjs"
+            ]
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E4",
+            "summary": "观察到 GitHub/npm 只读检查且未修改目标仓库；未完成系统调用级网络与文件审计",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#permission-scope"
+            ]
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E4",
+            "summary": "用户可见结果包含总分、等级、维度和证据状态",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#repeat-run-and-visible-result"
+            ]
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PASS",
+            "level": "E2",
+            "summary": "冻结安装、两套类型检查和 13 个文件中的 91 个测试全部通过",
+            "evidence": [
+              "evidence/raw/dsh-score-run.md#engineering-verification"
+            ]
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "artifact lockfile=true, artifact changelog=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "security policy=true, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 2 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "Mingxi2077/dsh-plugin-review",
+        "commit": "e3176cd157e93d5bea9d930275afa16e4c8867af",
+        "label": "dsh-plugin-review",
+        "cohort": "community-cold",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "Mingxi2077/dsh-plugin-review",
+        "commit": "e3176cd157e93d5bea9d930275afa16e4c8867af",
+        "commitAt": "2026-08-14T07:57:43+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": null,
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 35,
+          "upper": 85,
+          "coverage": 50,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 4,
+            "possible": 20,
+            "unproven": 11
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 6,
+            "possible": 12,
+            "unproven": 6
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 9.5,
+            "possible": 13,
+            "unproven": 2
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 0,
+            "possible": 12,
+            "unproven": 12
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 9.5,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 3,
+            "possible": 10,
+            "unproven": 7
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 3,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 1,
+          "forks": 0
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "未发现自动化测试",
+            "evidence": []
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 1 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/dsh-tools@^0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/dsh-tools@^0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现长期资源与清理形状；未证明两者生命周期关联",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "tests=false, ci=false, scripts=none",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 6 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "titanwings/colleague-skill",
+        "commit": "5a799b83b5d11aa0dbdc09df70fed46265d71f0b",
+        "label": "colleague-skill",
+        "cohort": "popular-skill",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "titanwings/colleague-skill",
+        "commit": "5a799b83b5d11aa0dbdc09df70fed46265d71f0b",
+        "commitAt": "2026-08-18T21:35:38+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": null,
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "skill"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 39.6,
+          "upper": 89.6,
+          "coverage": 50,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 6.5,
+            "possible": 20,
+            "unproven": 11
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 3,
+            "possible": 9,
+            "unproven": 6
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 3,
+            "possible": 5,
+            "unproven": 2
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 1,
+            "possible": 9,
+            "unproven": 7
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 11,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 3,
+            "possible": 6,
+            "unproven": 3
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 5,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 23808,
+          "forks": 2100
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现 7 个测试文件；未提交 E2 执行结果",
+            "evidence": [
+              "tests/test_cli_lifecycle.py",
+              "tests/test_install_claude_generated_skill.py",
+              "tests/test_install_hermes_skill.py",
+              "tests/test_install_openclaw_and_codex.py",
+              "tests/test_research_tools.py"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "该类型不使用 bundle patch",
+            "evidence": []
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未从包依赖确认官方扩展接口",
+            "evidence": []
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未确认可发布物的兼容版本范围",
+            "evidence": []
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "非 UI 插件",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "tests=true, ci=true, scripts=none",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 2 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "amruthpillai/reactive-resume",
+        "commit": "3221afda9ddfb03d6cce87927b0ce47338b4cfa8",
+        "artifact": "packages/dsh-plugin",
+        "label": "reactive-resume",
+        "cohort": "popular-mother-repo-attribution-control",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "amruthpillai/reactive-resume",
+        "commit": "3221afda9ddfb03d6cce87927b0ce47338b4cfa8",
+        "commitAt": "2026-08-18T18:42:42Z",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "environment": null,
+        "classification": {
+          "artifact": "packages/dsh-plugin",
+          "types": [
+            "bundle"
+          ],
+          "eligible": true
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": {
+          "confirmed": 44.3,
+          "upper": 88.7,
+          "coverage": 55.7,
+          "formal": false,
+          "grade": "暂定/未排名",
+          "caps": []
+        },
+        "dimensions": [
+          {
+            "id": "function",
+            "name": "功能价值与结果正确性",
+            "confirmed": 6.5,
+            "possible": 20,
+            "unproven": 11
+          },
+          {
+            "id": "install",
+            "name": "安装、激活、升级与卸载",
+            "confirmed": 6,
+            "possible": 12,
+            "unproven": 6
+          },
+          {
+            "id": "integration",
+            "name": "DSH 原生集成与可组合性",
+            "confirmed": 8,
+            "possible": 10,
+            "unproven": 2
+          },
+          {
+            "id": "reliability",
+            "name": "可靠性与状态完整性",
+            "confirmed": 2.5,
+            "possible": 12,
+            "unproven": 7
+          },
+          {
+            "id": "security",
+            "name": "权限、安全与隐私",
+            "confirmed": 11,
+            "possible": 15,
+            "unproven": 4
+          },
+          {
+            "id": "performance",
+            "name": "性能与资源效率",
+            "confirmed": 0,
+            "possible": 8,
+            "unproven": 8
+          },
+          {
+            "id": "ux",
+            "name": "用户体验与可运维性",
+            "confirmed": 4,
+            "possible": 10,
+            "unproven": 5
+          },
+          {
+            "id": "engineering",
+            "name": "测试、发布与维护质量",
+            "confirmed": 5,
+            "possible": 10,
+            "unproven": 0
+          }
+        ],
+        "adoption": {
+          "scope": "repository",
+          "stars": 41519,
+          "forks": 4652
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态发现 4 个测试文件；未提交 E2 执行结果",
+            "evidence": [
+              "src/config.test.ts",
+              "src/index.test.ts",
+              "src/prompt.test.ts",
+              "src/tool-names.test.ts"
+            ]
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "dsh.bundle.patch 均可解析",
+            "evidence": [
+              "cordis.patch.yml"
+            ]
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明 3 个 DSH/Cordis 依赖",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-mcp-client@^0.1.0-rc.6",
+              "@deepseek-ai/dsh-system-prompt@^0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "声明外部 DSH/Cordis 版本范围",
+            "evidence": [
+              "@deepseek-ai/cordis@^4.0.1",
+              "@deepseek-ai/dsh-mcp-client@^0.1.0-rc.6",
+              "@deepseek-ai/dsh-system-prompt@^0.1.0-rc.6"
+            ]
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到 UI 能力，但尚未验证桌面/移动与关键交互",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "tests=true, ci=false, scripts=test,typecheck",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 1 天",
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "sample": {
+        "target": "imsai-sh/zhuzhiliao",
+        "commit": "199e203b038ffb515f3a21189a29da4b4fb8518f",
+        "label": "zhuzhiliao",
+        "cohort": "popular-topic-contamination-control",
+        "identity": "COMMUNITY_DISCOVERABLE"
+      },
+      "report": {
+        "schema": "dsh-plugin-bench/report-v1",
+        "target": "imsai-sh/zhuzhiliao",
+        "commit": "199e203b038ffb515f3a21189a29da4b4fb8518f",
+        "commitAt": "2026-08-14T22:31:32+08:00",
+        "evaluatedAt": "2026-08-20T17:38:26.245Z",
+        "classification": {
+          "artifact": ".",
+          "types": [
+            "external-integration"
+          ],
+          "eligible": false,
+          "reason": "未发现可由 DSH 加载的 bundle、原生插件包、Skill 或 preset artifact"
+        },
+        "identity": "COMMUNITY_DISCOVERABLE",
+        "quality": null,
+        "adoption": {
+          "scope": "repository",
+          "stars": 2853,
+          "forks": 341
+        },
+        "checks": [
+          {
+            "id": "function.promise",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 4,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "核心用途与主路径是否具体可核查",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "function.automated-tests",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 5,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现自动化测试",
+            "evidence": []
+          },
+          {
+            "id": "function.core-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 8,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无真实用户主路径和最终结果证据",
+            "evidence": []
+          },
+          {
+            "id": "function.negative-path",
+            "dimension": "function",
+            "dimensionName": "功能价值与结果正确性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无受支持失败路径的真实运行证据",
+            "evidence": []
+          },
+          {
+            "id": "install.documentation",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 提供与 artifact 类型匹配的安装/启用说明",
+            "evidence": [
+              "README.md"
+            ]
+          },
+          {
+            "id": "install.manifest",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "该类型不使用 bundle patch",
+            "evidence": []
+          },
+          {
+            "id": "install.clean-profile",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未在隔离 DSH_HOME 执行干净安装",
+            "evidence": []
+          },
+          {
+            "id": "install.restart-remove",
+            "dimension": "install",
+            "dimensionName": "安装、激活、升级与卸载",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重启激活与卸载清理",
+            "evidence": []
+          },
+          {
+            "id": "integration.public-seam",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未从包依赖确认官方扩展接口",
+            "evidence": []
+          },
+          {
+            "id": "integration.version-range",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未确认可发布物的兼容版本范围",
+            "evidence": []
+          },
+          {
+            "id": "integration.lifecycle",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "未发现需额外管理的 timer/watcher/server 资源",
+            "evidence": []
+          },
+          {
+            "id": "integration.config-validation",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "配置是否在最早可判断处校验",
+            "evidence": []
+          },
+          {
+            "id": "integration.compose-hmr",
+            "dimension": "integration",
+            "dimensionName": "DSH 原生集成与可组合性",
+            "points": 2,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证与 baseline 共存、HMR 或卸载生命周期",
+            "evidence": []
+          },
+          {
+            "id": "reliability.error-tests",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "静态测试形状不能证明错误或无效输入测试已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.timeout-cancel",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "静态测试形状不能证明取消或超时路径已执行",
+            "evidence": []
+          },
+          {
+            "id": "reliability.repeat-run",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未验证重复运行的稳定性",
+            "evidence": []
+          },
+          {
+            "id": "reliability.state-restart",
+            "dimension": "reliability",
+            "dimensionName": "可靠性与状态完整性",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "检测到状态能力，但尚未验证重启/部分失败后的完整性",
+            "evidence": []
+          },
+          {
+            "id": "security.license",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "发现许可证声明",
+            "evidence": []
+          },
+          {
+            "id": "security.embedded-secret",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "未在运行源码中发现常见长效凭证字面量",
+            "evidence": []
+          },
+          {
+            "id": "security.install-scripts",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "无安装期脚本",
+            "evidence": []
+          },
+          {
+            "id": "security.network-credentials",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "网络、凭证与遥测行为是否披露",
+            "evidence": []
+          },
+          {
+            "id": "security.permission-scope",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚未以真实运行观察权限、网络和写入范围",
+            "evidence": []
+          },
+          {
+            "id": "security.major-undisclosed",
+            "dimension": "security",
+            "dimensionName": "权限、安全与隐私",
+            "points": 0,
+            "status": "N/A",
+            "level": "E0",
+            "summary": "未提交重大未披露越界行为 gate 证据",
+            "evidence": []
+          },
+          {
+            "id": "performance.startup-idle",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无相对 baseline 的启动与空闲资源增量",
+            "evidence": []
+          },
+          {
+            "id": "performance.main-path",
+            "dimension": "performance",
+            "dimensionName": "性能与资源效率",
+            "points": 4,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无主路径延迟、内存、网络或 token 增量",
+            "evidence": []
+          },
+          {
+            "id": "ux.readme-config",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "README 是否覆盖安装、配置和使用",
+            "evidence": []
+          },
+          {
+            "id": "ux.actionable-errors",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "错误是否能指导用户下一步",
+            "evidence": []
+          },
+          {
+            "id": "ux.visible-result",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 3,
+            "status": "UNPROVEN",
+            "level": "E0",
+            "summary": "尚无用户可见兑现证据",
+            "evidence": []
+          },
+          {
+            "id": "ux.ui-layout",
+            "dimension": "ux",
+            "dimensionName": "用户体验与可运维性",
+            "points": 2,
+            "status": "N/A",
+            "level": "E1",
+            "summary": "非 UI 插件",
+            "evidence": []
+          },
+          {
+            "id": "engineering.verification",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 4,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "tests=false, ci=false, scripts=none",
+            "evidence": []
+          },
+          {
+            "id": "engineering.release",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "FAIL",
+            "level": "E1",
+            "summary": "artifact lockfile=false, artifact changelog=false",
+            "evidence": []
+          },
+          {
+            "id": "engineering.support",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PARTIAL",
+            "level": "E1",
+            "summary": "security policy=false, license=true",
+            "evidence": []
+          },
+          {
+            "id": "engineering.maintenance",
+            "dimension": "engineering",
+            "dimensionName": "测试、发布与维护质量",
+            "points": 2,
+            "status": "PASS",
+            "level": "E1",
+            "summary": "固定 commit 距固定评估时点 6 天",
+            "evidence": []
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "targetCommit": "25f21aefaf8ddc414da54d2e581e43740d977c6e",
+  "targetArtifact": "zero-anchored-standard",
+  "environment": {
+    "node": "22.22.0",
+    "os": "macOS",
+    "isolatedDshHome": false
+  },
+  "checks": {
+    "function.automated-tests": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "npm 安装后执行项目测试，205 个测试全部通过",
+      "evidence": ["npm install --ignore-scripts && npm test: 205 passed"]
+    },
+    "engineering.verification": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "npm 安装完成，205 个项目测试全部通过",
+      "evidence": ["npm install --ignore-scripts && npm test: 205 passed"]
+    }
+  }
+}

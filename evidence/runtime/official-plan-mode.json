@@ -1,0 +1,25 @@
+{
+  "targetCommit": "141eb6fef83422698aef7a981029e843e8161534",
+  "targetArtifact": "packages/plan/plan-mode",
+  "environment": {
+    "dsh": "0.1.0-rc.8",
+    "commit": "141eb6f",
+    "node": "22.22.0",
+    "os": "macOS",
+    "isolatedDshHome": false
+  },
+  "checks": {
+    "function.automated-tests": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "官方 plan-mode 聚焦测试 4 个文件、83 个测试全部通过",
+      "evidence": ["corepack pnpm exec vitest run packages/plan/plan-mode/tests"]
+    },
+    "engineering.verification": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "官方 plan-mode 聚焦测试 4 个文件、83 个测试全部通过",
+      "evidence": ["corepack pnpm exec vitest run packages/plan/plan-mode/tests"]
+    }
+  }
+}

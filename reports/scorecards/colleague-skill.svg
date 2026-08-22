@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DSH quality: 39.6–89.6 provisional; titanwings/colleague-skill; commit 5a799b83b5d11aa0dbdc09df70fed46265d71f0b" width="251" height="20" viewBox="0 0 251 20">
+  <title>DSH quality: 39.6–89.6 provisional; titanwings/colleague-skill; commit 5a799b83b5d11aa0dbdc09df70fed46265d71f0b</title>
+  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-opacity=".08"/></linearGradient>
+  <clipPath id="r"><rect width="251" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#r)"><rect width="88" height="20" fill="#334155"/><rect x="88" width="163" height="20" fill="#2563eb"/><rect width="251" height="20" fill="url(#s)"/></g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11"><text x="44" y="15" fill="#010101" fill-opacity=".3">DSH quality</text><text x="44" y="14">DSH quality</text><text x="169.5" y="15" fill="#010101" fill-opacity=".3">39.6–89.6 provisional</text><text x="169.5" y="14">39.6–89.6 provisional</text></g>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "targetCommit": "303b728b9fa780cdba45d2c7ac6df580eb84c540",
+  "targetArtifact": "packages/plugin/console",
+  "environment": {
+    "dsh": "0.1.0-rc.8",
+    "node": "22.22.0",
+    "os": "macOS",
+    "profile": "web",
+    "isolatedDshHome": true
+  },
+  "checks": {
+    "install.clean-profile": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "@vlln/plugin-console@0.1.0 从空 DSH_HOME 安装、解析并启动 Web profile",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"]
+    },
+    "install.restart-remove": {
+      "status": "UNPROVEN",
+      "level": "E3",
+      "summary": "本轮未执行卸载闭环"
+    },
+    "function.core-path": {
+      "status": "PASS",
+      "level": "E4",
+      "summary": "运行时注册四个插件工具，/api/plugin-console/installed 返回 200 与实际安装列表",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"]
+    },
+    "integration.compose-hmr": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "与官方 Web baseline 共存并完成插件工具和 HTTP 路由注册",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"]
+    },
+    "reliability.repeat-run": {
+      "status": "UNPROVEN",
+      "level": "E4",
+      "summary": "本轮未执行重复运行测试"
+    },
+    "security.permission-scope": {
+      "status": "PARTIAL",
+      "level": "E4",
+      "summary": "使用隔离 DSH_HOME 且状态端点只读；安装/卸载工具的写入边界未做系统调用级审计",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"]
+    },
+    "ux.visible-result": {
+      "status": "PARTIAL",
+      "level": "E4",
+      "summary": "API 状态结果可见；浏览器面板交互未完成",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#plugin-registry-010"]
+    }
+  }
+}

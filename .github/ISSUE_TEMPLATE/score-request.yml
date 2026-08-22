@@ -1,0 +1,51 @@
+name: Plugin score request
+description: Request an evidence-bounded score for one exact DSH artifact.
+title: "score: "
+labels: ["score-request"]
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Full commit
+      description: A full 40-character Git commit, not a branch or short SHA.
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Artifact path
+      description: Repository-relative path, or a single dot for the root.
+      value: "."
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Expected artifact type
+      options:
+        - Bundle
+        - Native Cordis plugin
+        - Skill
+        - Preset
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Runtime and identity evidence
+      description: Link only to redacted, first-party, commit-bound evidence. Leave unknown claims explicitly UNPROVEN.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: I confirmed this request contains no API keys, access tokens, private URLs, or user data.
+          required: true

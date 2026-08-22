@@ -1,0 +1,57 @@
+{
+  "schema": "dsh-plugin-bench/rubric-v1",
+  "totalPoints": 100,
+  "minimumCoverageForGrade": 80,
+  "statuses": {
+    "PASS": 1,
+    "PARTIAL": 0.5,
+    "FAIL": 0,
+    "UNPROVEN": null,
+    "N/A": null
+  },
+  "dimensions": [
+    { "id": "function", "name": "功能价值与结果正确性", "points": 20 },
+    { "id": "install", "name": "安装、激活、升级与卸载", "points": 12 },
+    { "id": "integration", "name": "DSH 原生集成与可组合性", "points": 13 },
+    { "id": "reliability", "name": "可靠性与状态完整性", "points": 12 },
+    { "id": "security", "name": "权限、安全与隐私", "points": 15 },
+    { "id": "performance", "name": "性能与资源效率", "points": 8 },
+    { "id": "ux", "name": "用户体验与可运维性", "points": 10 },
+    { "id": "engineering", "name": "测试、发布与维护质量", "points": 10 }
+  ],
+  "evidenceLevels": {
+    "E0": "作者声明或仓库标签，未核实",
+    "E1": "固定 SHA 的源码、manifest、文档或许可证静态证据",
+    "E2": "可复现构建、类型检查、测试或静态扫描",
+    "E3": "隔离 DSH_HOME 的安装、启动、重启或卸载",
+    "E4": "真实用户路径及最终文件、UI、日志或外部状态",
+    "E5": "独立审核者在另一环境、版本或模型条件复现"
+  },
+  "runtimeMinimumEvidence": {
+    "function.automated-tests": "E2",
+    "function.core-path": "E4",
+    "function.negative-path": "E4",
+    "install.clean-profile": "E3",
+    "install.restart-remove": "E3",
+    "integration.compose-hmr": "E3",
+    "reliability.error-tests": "E2",
+    "reliability.timeout-cancel": "E2",
+    "reliability.repeat-run": "E4",
+    "reliability.state-restart": "E4",
+    "security.permission-scope": "E4",
+    "security.major-undisclosed": "E1",
+    "performance.startup-idle": "E4",
+    "performance.main-path": "E4",
+    "ux.visible-result": "E4",
+    "ux.ui-layout": "E4",
+    "engineering.verification": "E2"
+  },
+  "identityLabels": [
+    "OFFICIAL_BUILT_IN",
+    "OFFICIAL_DOC_REFERENCE",
+    "BETA_PARTICIPANT_VERIFIED",
+    "COMMUNITY_DISCOVERABLE",
+    "SELF_CLAIMED",
+    "UNPROVEN"
+  ]
+}

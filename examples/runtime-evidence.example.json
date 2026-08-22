@@ -1,0 +1,20 @@
+{
+  "schema": "dsh-plugin-bench/runtime-evidence-v1",
+  "targetCommit": "0000000000000000000000000000000000000000",
+  "targetArtifact": ".",
+  "environment": {
+    "dsh": "",
+    "node": "",
+    "os": "",
+    "profile": "",
+    "isolatedDshHome": false
+  },
+  "checks": {
+    "function.core-path": {
+      "status": "UNPROVEN",
+      "level": "E4",
+      "summary": "Replace every placeholder with an observed, scoped result.",
+      "evidence": []
+    }
+  }
+}

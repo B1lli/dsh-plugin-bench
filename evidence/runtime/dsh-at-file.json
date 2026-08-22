@@ -1,0 +1,42 @@
+{
+  "targetCommit": "c57849b27e378cf6b41d082b17c8a8750cee370f",
+  "targetArtifact": ".",
+  "environment": {
+    "dsh": "0.1.0-rc.8",
+    "node": "22.22.0",
+    "os": "macOS",
+    "profile": "web",
+    "isolatedDshHome": true
+  },
+  "checks": {
+    "function.automated-tests": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "按项目支持的 sibling 源码布局执行 164 个测试，全部通过",
+      "evidence": ["supported sibling layout pnpm run check: 164 tests passed"]
+    },
+    "engineering.verification": {
+      "status": "PARTIAL",
+      "level": "E2",
+      "summary": "按支持的 sibling 源码布局完成 typecheck、164 个测试与 build；冻结安装因 workspace 配置与 lockfile 不一致失败",
+      "evidence": ["pnpm install --frozen-lockfile: config mismatch", "supported sibling layout pnpm run check: 164 tests plus typecheck/build passed"]
+    },
+    "install.clean-profile": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "README 固定 tarball v0.6.7 从空 DSH_HOME 安装并启动 Web profile",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#dsh-at-file-v067"]
+    },
+    "install.restart-remove": {
+      "status": "UNPROVEN",
+      "level": "E3",
+      "summary": "本轮未执行卸载闭环"
+    },
+    "integration.compose-hmr": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "配置解析并与官方 Web baseline 共存启动",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#dsh-at-file-v067"]
+    }
+  }
+}

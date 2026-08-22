@@ -1,0 +1,65 @@
+{
+  "name": "dsh-plugin-bench",
+  "version": "0.2.0",
+  "description": "Evidence-backed, type-aware quality benchmark for DeepSeek Harness plugins",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "plugin-quality",
+    "scorecard",
+    "benchmark",
+    "developer-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B1lli/dsh-plugin-bench.git"
+  },
+  "homepage": "https://github.com/B1lli/dsh-plugin-bench#readme",
+  "bugs": {
+    "url": "https://github.com/B1lli/dsh-plugin-bench/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "bin": {
+    "dsh-plugin-bench": "./src/cli.mjs"
+  },
+  "exports": {
+    "./inspect": "./src/inspect.mjs",
+    "./score": "./src/score.mjs",
+    "./render": "./src/render.mjs",
+    "./rubric": "./rubric.json"
+  },
+  "files": [
+    "src/",
+    "rubric.json",
+    "README.md",
+    "README.zh-CN.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "examples/",
+    "reports/benchmark.md",
+    "reports/ecosystem-gap.md",
+    "reports/scorecards/",
+    "evidence/reviews/",
+    "evidence/raw/"
+  ],
+  "scripts": {
+    "score": "node src/cli.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "test": "node --test",
+    "check": "node --check src/cli.mjs && node --check src/inspect.mjs && node --check src/score.mjs && node --check src/render.mjs && node --check src/runtime-template.mjs && node --test",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run check && npm run pack:check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "typescript": "5.9.3",
+    "yaml": "^2.8.1"
+  },
+  "license": "MIT"
+}

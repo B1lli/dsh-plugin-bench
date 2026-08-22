@@ -1,0 +1,73 @@
+{
+  "targetCommit": "f2f173f520eea0aaeb35e93dc2e5298433a4bf26",
+  "targetArtifact": ".",
+  "environment": {
+    "dsh": "0.1.0-rc.8",
+    "node": "22.22.0",
+    "os": "macOS",
+    "profile": "headless/web",
+    "isolatedDshHome": true
+  },
+  "checks": {
+    "function.automated-tests": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "13 个文件中的 91 个自动化测试全部通过",
+      "evidence": ["evidence/raw/dsh-score-run.md#engineering-verification"]
+    },
+    "engineering.verification": {
+      "status": "PASS",
+      "level": "E2",
+      "summary": "冻结安装、两套类型检查和 13 个文件中的 91 个测试全部通过",
+      "evidence": ["evidence/raw/dsh-score-run.md#engineering-verification"]
+    },
+    "install.clean-profile": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "从空 DSH_HOME 安装到 headless/web profile，配置解析和 Web 启动均成功",
+      "evidence": ["evidence/raw/dsh-score-run.md#clean-profile"]
+    },
+    "install.restart-remove": {
+      "status": "PARTIAL",
+      "level": "E3",
+      "summary": "重启激活成功；官方 CLI remove 删除依赖后未同步清理 profile bundle 行，归因为平台级卸载缺陷",
+      "evidence": ["evidence/raw/dsh-score-run.md#restart-remove"]
+    },
+    "function.core-path": {
+      "status": "PASS",
+      "level": "E4",
+      "summary": "DeepSeek agent 实际调用 score 工具并得到结构化评分结果",
+      "evidence": ["evidence/raw/dsh-score-run.md#core-path"]
+    },
+    "function.negative-path": {
+      "status": "PASS",
+      "level": "E4",
+      "summary": "空 target 返回明确可行动错误，Harness 会话保持可用",
+      "evidence": ["evidence/raw/dsh-score-run.md#negative-path"]
+    },
+    "integration.compose-hmr": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "与官方 baseline profile 共存并可在 Web/Headless 两种 profile 启动",
+      "evidence": ["evidence/raw/dsh-score-run.md#clean-profile"]
+    },
+    "reliability.repeat-run": {
+      "status": "UNPROVEN",
+      "level": "E4",
+      "summary": "两个独立会话运行了不同路径，不能证明同一路径重复运行稳定",
+      "evidence": ["evidence/raw/dsh-score-run.md#repeat-run-and-visible-result"]
+    },
+    "security.permission-scope": {
+      "status": "PARTIAL",
+      "level": "E4",
+      "summary": "观察到 GitHub/npm 只读检查且未修改目标仓库；未完成系统调用级网络与文件审计",
+      "evidence": ["evidence/raw/dsh-score-run.md#permission-scope"]
+    },
+    "ux.visible-result": {
+      "status": "PASS",
+      "level": "E4",
+      "summary": "用户可见结果包含总分、等级、维度和证据状态",
+      "evidence": ["evidence/raw/dsh-score-run.md#repeat-run-and-visible-result"]
+    }
+  }
+}

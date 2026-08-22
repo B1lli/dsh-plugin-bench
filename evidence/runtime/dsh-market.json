@@ -1,0 +1,30 @@
+{
+  "targetCommit": "f840fd4010904cb8cea2ff4000b10c74e84dd96c",
+  "targetArtifact": "plugin/ui",
+  "environment": {
+    "dsh": "0.1.0-rc.8",
+    "node": "22.22.0",
+    "os": "macOS",
+    "profile": "web",
+    "isolatedDshHome": true
+  },
+  "checks": {
+    "install.clean-profile": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "@dsh-market/plugin 从空 DSH_HOME 安装、解析并启动 Web profile",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#dsh-market-021"]
+    },
+    "install.restart-remove": {
+      "status": "UNPROVEN",
+      "level": "E3",
+      "summary": "本轮未执行卸载闭环"
+    },
+    "integration.compose-hmr": {
+      "status": "PASS",
+      "level": "E3",
+      "summary": "与官方 Web baseline 共存启动",
+      "evidence": ["evidence/raw/plugin-runtime-pilot.md#dsh-market-021"]
+    }
+  }
+}
